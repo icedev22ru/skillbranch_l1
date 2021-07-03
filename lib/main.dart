@@ -18,7 +18,7 @@ class Myapp extends StatefulWidget {
 class _MyappState extends State<Myapp> {
   String _timerValue = "GO!";
   GameState gameState = GameState.readyToStart;
-  Color _buttonColor = Colors.green;
+  Color _buttonColor = Color(0xFF40CA88);
   Timer waitingTimer;
   Timer stopTimer;
 
@@ -27,7 +27,7 @@ class _MyappState extends State<Myapp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Color(0xFF2d3436),
+        backgroundColor: Color(0xFF282E3D),
         body: SafeArea(
           child: Stack(children: [
             Container(
@@ -39,13 +39,13 @@ class _MyappState extends State<Myapp> {
                 style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.w900,
-                    fontSize: 28),
+                    fontSize: 38),
               ),
             ),
             Align(
               alignment: Alignment.center,
               child: ColoredBox(
-                color: Color(0xFFb2bec3),
+                color: Color(0xFF6D6D6D),
                 child: SizedBox(
                   width: 300,
                   height: 160,
@@ -55,7 +55,7 @@ class _MyappState extends State<Myapp> {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           color: Colors.black,
-                          fontSize: 40,
+                          fontSize: 36,
                           fontWeight: FontWeight.bold),
                     ),
                   ),
@@ -69,20 +69,18 @@ class _MyappState extends State<Myapp> {
                   switch (gameState) {
                     case GameState.readyToStart:
                       gameState = GameState.Waiting;
-                      _buttonColor = Colors.yellow;
+                      _buttonColor = Color(0xFFE0982D);
                       _timerValue = "Get ready";
                       _startWaitingTimer();
                       break;
                     case GameState.Waiting:
                       gameState = GameState.canBeStop;
-                      _buttonColor = Colors.red;
-
+                      _buttonColor = Color(0xFFE0982D);
                       break;
                     case GameState.canBeStop:
                       gameState = GameState.readyToStart;
-                      _buttonColor = Colors.green;
+                      _buttonColor = Color(0xFF40CA88);
                       stopTimer.cancel();
-
                       break;
                   }
                 }),
@@ -132,7 +130,7 @@ class _MyappState extends State<Myapp> {
     waitingTimer = Timer(Duration(milliseconds: randMill), () {
       setState(() {
         gameState = GameState.canBeStop;
-        _buttonColor = Colors.red;
+        _buttonColor = Color(0xFFE02D47);
         _startPerTimer();
       });
     });
