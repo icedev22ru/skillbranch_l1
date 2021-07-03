@@ -96,7 +96,7 @@ class _MyAppState extends State<MyApp> {
                           child: Text(
                         _getButtonText(),
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 28),
+                            fontWeight: FontWeight.w500, fontSize: 28),
                       )),
                     ),
                   ),
