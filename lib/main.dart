@@ -5,17 +5,17 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(Myapp());
+  runApp(MyApp());
 }
 
-class Myapp extends StatefulWidget {
-  const Myapp({Key? key}) : super(key: key);
+class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
 
   @override
-  _MyappState createState() => _MyappState();
+  _MyAppState createState() => _MyAppState();
 }
 
-class _MyappState extends State<Myapp> {
+class _MyAppState extends State<MyApp> {
   String _timerValue = "GO!";
   GameState gameState = GameState.readyToStart;
   Color _buttonColor = Color(0xFF40CA88);
