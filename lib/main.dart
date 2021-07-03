@@ -9,7 +9,7 @@ void main() {
 }
 
 class Myapp extends StatefulWidget {
-  const Myapp({Key key}) : super(key: key);
+  const Myapp({Key? key}) : super(key: key);
 
   @override
   _MyappState createState() => _MyappState();
@@ -19,8 +19,8 @@ class _MyappState extends State<Myapp> {
   String _timerValue = "GO!";
   GameState gameState = GameState.readyToStart;
   Color _buttonColor = Color(0xFF40CA88);
-  Timer waitingTimer;
-  Timer stopTimer;
+  Timer? waitingTimer;
+  Timer? stopTimer;
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +80,7 @@ class _MyappState extends State<Myapp> {
                     case GameState.canBeStop:
                       gameState = GameState.readyToStart;
                       _buttonColor = Color(0xFF40CA88);
-                      stopTimer.cancel();
+                      stopTimer?.cancel();
                       break;
                   }
                 }),
@@ -113,15 +113,13 @@ class _MyappState extends State<Myapp> {
     switch (gameState) {
       case GameState.readyToStart:
         return "START";
-        break;
+
       case GameState.Waiting:
         return "WAIT";
-        break;
+
       case GameState.canBeStop:
         return "STOP";
-        break;
     }
-    return "";
   }
 
   void _startWaitingTimer() {
@@ -146,8 +144,8 @@ class _MyappState extends State<Myapp> {
 
   @override
   void dispose() {
-    waitingTimer.cancel();
-    stopTimer.cancel();
+    waitingTimer?.cancel();
+    stopTimer?.cancel();
     super.dispose();
   }
 }
