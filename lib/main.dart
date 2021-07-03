@@ -30,9 +30,8 @@ class _MyAppState extends State<MyApp> {
         backgroundColor: Color(0xFF282E3D),
         body: SafeArea(
           child: Stack(children: [
-            Container(
+            Align(
               alignment: Alignment(0, -0.8),
-              margin: EdgeInsets.only(top: 25),
               child: Text(
                 "Test your\nspeed reaction",
                 textAlign: TextAlign.center,
@@ -45,7 +44,7 @@ class _MyAppState extends State<MyApp> {
             Align(
               alignment: Alignment.center,
               child: ColoredBox(
-                color: Color(0xFF6D6D6D),
+                color: const Color(0xFF6D6D6D),
                 child: SizedBox(
                   width: 300,
                   height: 160,
