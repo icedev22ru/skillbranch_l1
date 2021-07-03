@@ -31,7 +31,7 @@ class _MyAppState extends State<MyApp> {
         body: SafeArea(
           child: Stack(children: [
             Container(
-              alignment: Alignment.topCenter,
+              alignment: Alignment(0, -0.8),
               margin: EdgeInsets.only(top: 25),
               child: Text(
                 "Test your\nspeed reaction",
@@ -54,16 +54,16 @@ class _MyAppState extends State<MyApp> {
                       _timerValue,
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                          color: Colors.black,
+                          color: Colors.white,
                           fontSize: 36,
-                          fontWeight: FontWeight.bold),
+                          fontWeight: FontWeight.w500),
                     ),
                   ),
                 ),
               ),
             ),
             Align(
-              alignment: Alignment.bottomCenter,
+              alignment: Alignment(0, 0.8),
               child: GestureDetector(
                 onTap: () => setState(() {
                   switch (gameState) {
@@ -86,7 +86,6 @@ class _MyAppState extends State<MyApp> {
                 }),
                 child: Container(
                   margin: EdgeInsets.only(bottom: 35),
-                  color: Colors.amber,
                   child: ColoredBox(
                     color: _buttonColor,
                     child: SizedBox(
@@ -96,7 +95,7 @@ class _MyAppState extends State<MyApp> {
                           child: Text(
                         _getButtonText(),
                         style: TextStyle(
-                            fontWeight: FontWeight.w500, fontSize: 28),
+                            fontWeight: FontWeight.w900, fontSize: 38),
                       )),
                     ),
                   ),
