@@ -16,7 +16,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String _timerValue = "GO!";
+  String _timerValue = "";
   GameState gameState = GameState.readyToStart;
   Color _buttonColor = Color(0xFF40CA88);
   Timer? waitingTimer;
